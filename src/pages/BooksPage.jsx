@@ -5,6 +5,7 @@ import Search from "../components/Search";
 import useGetBooks from "../hooks/useGetBooks";
 import useReadingList from "../hooks/useReadingList";
 import MainLayout from "../layouts/MainLayout";
+import Loader from "../components/Loader";
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -53,7 +54,7 @@ const BooksPage = () => {
         />
       </>
       {isLoading ? (
-        "Loading books"
+        <Loader />
       ) : (
         <div className="books">
           {books && books.length > 0

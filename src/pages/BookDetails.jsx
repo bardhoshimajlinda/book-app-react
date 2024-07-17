@@ -6,6 +6,7 @@ import useGetBookById from "../hooks/useGetBookById";
 import useReadingList from "../hooks/useReadingList";
 import MainLayout from "../layouts/MainLayout";
 import PageNotFound from "./PageNotFound";
+import Loader from "../components/Loader";
 
 const BookDetails = () => {
   let { bookId } = useParams();
@@ -20,7 +21,7 @@ const BookDetails = () => {
 
   // handle book not found
   if (isLoading) {
-    return <div>Is loading</div>;
+    return <Loader />;
   }
   if (isError) return <PageNotFound title="Book Not Found" />;
 

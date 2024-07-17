@@ -2,6 +2,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import image from "../assets/image-not-found.jpg";
 
 const BookCard = ({ book, isAdded, toggleReadingList }) => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const BookCard = ({ book, isAdded, toggleReadingList }) => {
             alt={book.volumeInfo.title}
           />
         ) : (
-          <div>No thumbnail</div>
+          <img className="image-not-found" src={image} alt="Image not found" />
         )}
       </div>
       <h2>{book.volumeInfo.title}</h2>

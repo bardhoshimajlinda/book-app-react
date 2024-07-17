@@ -20,14 +20,17 @@ body {
   font-size: 18px;
   color: #51554f;
   font-weight: bold;
-  @media only screen and (max-width: 400px) {
-    font-size: 12px;
-    text-decoration-line: spelling-error;
-  }
 }
 
 .navigation li a:hover {
   color: #ff4081;
+}
+
+/* Media query */
+@media only screen and (max-width: 400px) {
+  .navigation li a {
+    font-size: 12px;
+  }
 }
 
 .books {
@@ -165,8 +168,6 @@ input[type="text"]:focus {
   color: #597445;
 }
 
-/**/
-
 .book-details {
   display: flex;
   justify-content: center;
@@ -210,22 +211,6 @@ input[type="text"]:focus {
 .book-description {
   margin-bottom: 25px;
 }
-/* 
-.btn {
-  width: 150px;
-  display: inline-block;
-  padding: 8px 20px;
-  background-color: rgba(190, 154, 210, 0.22);
-  color: #000000;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  border-color: #583c67;
-}
-
-.btn:hover {
-  background-color: #be9ad2;
-} */
 
 .btn {
   width: 150px;
@@ -253,8 +238,6 @@ input[type="text"]:focus {
 .icon.added {
   color: #ff4081;
 }
-
-/**/
 
 .heart-icon {
   font-size: 25px;
@@ -312,7 +295,11 @@ h2 {
   margin-top: 10px;
   text-align: justify;
   width: 540px;
-  @media only screen and (max-width: 400px) {
+}
+
+/* Media query */
+@media only screen and (max-width: 400px) {
+  .paragraphs {
     max-width: 50%;
   }
 }
@@ -334,4 +321,46 @@ main {
   text-align: center;
   font-size: 14px;
   margin-top: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 30px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: #ff3d00 transparent;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

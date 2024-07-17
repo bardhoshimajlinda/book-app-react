@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import BookCard from "../components/BookCard";
 import MainLayout from "../layouts/MainLayout";
 import useReadingList from "../hooks/useReadingList";
+import Loader from "../components/Loader";
 
 const fetchBookById = async (id) => {
   try {
@@ -52,7 +53,7 @@ const MyReadingList = () => {
     <MainLayout>
       <div>
         {loading ? (
-          <p>Loading...</p>
+          <Loader />
         ) : error ? (
           <p>Error: {error}</p>
         ) : books.length > 0 ? (
