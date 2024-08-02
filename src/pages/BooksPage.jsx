@@ -18,7 +18,7 @@ const BooksPage = () => {
   const { readingList, toggleReadingList } = useReadingList();
 
   const {
-    books,
+    books = [],
     isLoading,
     refetch: fetchBooks,
   } = useGetBooks({

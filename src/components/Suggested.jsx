@@ -10,6 +10,8 @@ const Suggested = ({ query }) => {
 
   if (isLoading) return <Loader />;
 
+  if (!books || books.length === 0) return "No suggestions available";
+
   return (
     <div className="books">
       {books.slice(1, 4).map((book) => {
